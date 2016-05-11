@@ -39,7 +39,7 @@ app.use('/bundle.js', function (req, res) {
             presets: ["react", "es2015"],
             compact: false
         }))
-        .require("isomorphic-app.js", { entry: true })
+        .require("app.js", { entry: true })
         .bundle()
         .pipe(res);
 });
@@ -66,5 +66,5 @@ app.use('/', function (req, res) {
 });
 
 app.listen(app.get('port'), function () {
-    console.log("working...")
+    console.log("App running on port "+app.get('port'))
 });
